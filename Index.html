@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2 >Date Difference Calculator</h2>
+    <label for="date1">Start Date:</label>
+    <input type="date" id="date1" class="date1" name="date1" style=" 
+      color:#FF2C1B;
+      border-color: #9B34FF;
+  border-radius: 10px;
+  background-color: #99FF34;
+      border: 5px solid #9B34FF;
+      "><br><br>
+    <label for="date2">End Date:</label>
+    <input type="date" id="date2" class="date2"name="date2" style="
+      color: aqua;
+      border-color: #99FF34;
+  border-radius: 10px;
+  background-color: #9B34FF;
+      border: 5px solid #99FF34;"
+     ><br><br>
+    <button onclick="calculateDifference()" class="calculate">Calculate Difference</button>
+  <div class="buttons"> <a href="index.html" class="button refresh-btn">Again</a></div>
+
+    <p id="result"></p>
+  </div>
+
+    <script>
+        function calculateDifference() {
+            const date1 = new Date(document.getElementById('date1').value);
+            const date2 = new Date(document.getElementById('date2').value);
+
+            const timeDifference = Math.abs(date2 - date1);
+            const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+            document.getElementById('result').innerText = `Difference: ${dayDifference} days`;
+        }
+    </script>
+</body>
+</html>
